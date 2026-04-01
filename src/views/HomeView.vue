@@ -197,7 +197,7 @@
     </section>
 
     <!-- ===== CTA ===== -->
-    <section class="py-20 bg-blue-950 relative overflow-hidden">
+    <section class="py-20 bg-blue-900 relative overflow-hidden">
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary-500 rounded-full opacity-10 blur-3xl"></div>
       <div class="relative max-w-2xl mx-auto px-4 text-center">
         <div class="text-5xl mb-6">⚽</div>
