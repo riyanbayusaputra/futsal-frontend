@@ -2,7 +2,7 @@
   <DefaultLayout>
 
     <!-- ===== HERO ===== -->
-    <section class="relative min-h-[92vh] flex items-center overflow-hidden bg-gray-950">
+    <section class="relative min-h-[92vh] flex items-center overflow-hidden bg-blue-950">
       <div class="absolute inset-0 opacity-10"
         style="background-image: repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,.05) 60px,rgba(255,255,255,.05) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,.05) 60px,rgba(255,255,255,.05) 61px)">
       </div>
@@ -37,7 +37,7 @@
 
         <!-- Mock booking card -->
         <div class="hidden md:block">
-          <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-2xl max-w-sm ml-auto">
+          <div class="bg-blue-900 border border-gray-800 rounded-2xl p-6 shadow-2xl max-w-sm ml-auto">
             <div class="flex items-center justify-between mb-4">
               <span class="font-bold text-white text-sm">Booking Lapangan A</span>
               <span class="text-xs bg-primary-500/20 text-primary-500 px-2 py-0.5 rounded-full font-medium">Indoor</span>
@@ -197,7 +197,7 @@
     </section>
 
     <!-- ===== CTA ===== -->
-    <section class="py-20 bg-gray-950 relative overflow-hidden">
+    <section class="py-20 bg-blue-950 relative overflow-hidden">
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary-500 rounded-full opacity-10 blur-3xl"></div>
       <div class="relative max-w-2xl mx-auto px-4 text-center">
         <div class="text-5xl mb-6">⚽</div>
@@ -227,7 +227,7 @@ import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import api from '@/api'
 
 const courts        = ref([])
-const animatedStats = ref({ courts: 0, bookings: 0, users: 0 })
+const animatedStats = ref({ courts: 6, bookings: 1000, users: 100 })
 
 const mockSlots  = ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00']
 
@@ -267,6 +267,8 @@ function animateStats(target) {
     if (step >= steps) clearInterval(timer)
   }, duration / steps)
 }
+
+
 
 onMounted(async () => {
   try {

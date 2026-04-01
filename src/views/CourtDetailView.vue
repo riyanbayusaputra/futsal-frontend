@@ -137,15 +137,24 @@
                                     :key="slot.start"
                                     @click="toggleSlot(slot)"
                                     :disabled="!slot.is_available"
-                                    class="py-2 px-1 rounded-lg text-xs font-semibold transition-all"
-                                    :class="!slot.is_available
-  ? 'bg-red-50 text-red-400 border border-red-200 cursor-not-allowed line-through'
-  : isSelected(slot)
-    ? 'bg-primary-500 text-white shadow-md shadow-primary-500/30'
-    : 'bg-gray-50 text-gray-700 hover:bg-primary-50 hover:text-primary-600 border border-gray-200'
+                                    class="py-2 px-1 rounded-lg text-xs font-bold transition-all relative"
+                                    :class="
+                                        !slot.is_available
+                                            ? 'bg-red-500 text-white border border-red-700 cursor-not-allowed shadow-md'
+                                            : isSelected(slot)
+                                              ? 'bg-primary-500 text-white shadow-md shadow-primary-500/30'
+                                              : 'bg-gray-50 text-gray-700 hover:bg-primary-50 hover:text-primary-600 border border-gray-200'
                                     "
                                 >
-                                    {{ slot.start }}
+                                    <span
+                                        v-if="!slot.is_available"
+                                        class="absolute inset-0 flex items-center justify-center"
+                                    >
+                                        <span class="line-through">{{
+                                            slot.start
+                                        }}</span>
+                                    </span>
+                                    <span v-else>{{ slot.start }}</span>
                                 </button>
                             </div>
 
@@ -159,7 +168,7 @@
                                 </span>
                                 <span class="flex items-center gap-1.5">
                                     <span
-                                        class="w-3 h-3 bg-red-100 border border-red-200 rounded"
+                                        class="w-3 h-3 bg-red-500 rounded"
                                     ></span>
                                     Terisi
                                 </span>
